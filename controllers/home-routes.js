@@ -8,6 +8,8 @@ router.get('/', async (req, res) => {
     const postData = await Post.findAll({
       include: [User],
     });
+    console.log(postData)
+
     // serialize the data
     const posts = postData.map((post) => post.get({ plain: true }));
     // we should render all the posts here
@@ -35,6 +37,7 @@ router.get('/post/:id', async (req, res) => {
 
     if (postData) {
       // serialize the data
+      console.log(postData)
       const post = postData.get({ plain: true });
       // which view should we render for a single-post?
       res.render('single-post', { post });

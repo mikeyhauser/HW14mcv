@@ -1,0 +1,31 @@
+<div class="posts">
+    {{!-- {{#each Post.dataValues as |post|}} --}}
+    <article class="card">
+        <div class="card-header flex-row justify-space-between">
+            <h2>
+                <a href="/dashboard/edit/{{post.id}}">{{post.title}}</a>
+
+            </h2>
+        
+        </div>
+
+        <form id="edit-post-form">
+            <input type="hidden" id="post-id" name="post-id" value={{post.id}}>
+            <h2>Edit Post Title Here</h2>
+            <textarea class="form-input" name="post-title" id="post-title">{{post.title}}</textarea>
+            <h2>Edit Post Body Here</h2>
+
+            <textarea class="form-input" name="post-body" id="post-body">{{post.body}}</textarea>
+              <button type="submit" id="edit-btn" class="btn">Edit Post</button> <button type="submit" id="delete-btn"
+        class="btn">Delete Post</button>
+        </form>
+        {{!-- <div class="card-body">
+            {{body}}
+
+        </div> --}}
+    </article>
+
+  
+    {{!-- {{/each}} --}}
+</div>
+<script src="/js/edit.js"></script>
